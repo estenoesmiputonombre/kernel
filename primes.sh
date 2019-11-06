@@ -1,7 +1,18 @@
 #!/bin/bash
 
 function prime {
-	#echo "Executing the function: ${FUNCNAME} in the program $0"
+	value=$1
+	middle=$((value/2))
+	i=2
+	while [ $i -le $middle ] && [ $((value % i)) -ne 0 ]
+	do
+		((i++))
+	done
+	if [[ $i -ge $middle ]]; then echo 0; else echo 1; fi
+}
+
+function parseParams {
+	echo "Parsing the arguments using the ${FUNCNAME}"
 	if [[ $# -ne 1 ]]; then 
 		echo "Error parsing length of the params"
 		return 1
@@ -11,15 +22,8 @@ function prime {
 		echo "Error parsing the params"
 		return 2
 	fi
-	value=$1
-	middle=$((value/2))
-	i=2
-	while [ $i -le $middle ] && [ $((value % i)) -ne 0 ]
-	do
-		((i++))
-	done
-	if [[ $i -ge $middle ]]; then return 0; else return 1; fi
+	param=$1
+	if [[ $(prime param) -eq 1 ]]; then echo "This value $1 is not a prime"; else echo "This value $1 is a prime"; fi
 }
 
-if [[ $(prime 12) -eq 1 ]]; then echo "This is not a prime"; else echo "This is a prime"; fi
-
+parseParams $1
