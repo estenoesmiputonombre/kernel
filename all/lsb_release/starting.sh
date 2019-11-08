@@ -13,7 +13,7 @@ echo -ne "It means that the package lsb_core is missed. Executing:\n$(lsb_releas
 
 if [[ -a /bin/grep ]] || [[ -a /usr/bin/grep ]]; then 
     echo -ne "The grep command is installed\n"
-    if [[ echo -n "$(lsb_release --version)" | grep --count 'No LSB modules' ]]; then
+    if [[ $(echo -n "$(lsb_release --version)" | grep --count 'No LSB modules') -eq 1 ]]; then
         echo -ne "Installing the lsb-core modules to eliminate the persistent error\n"
         sudo apt-get install -y lsb-core 
     fi
@@ -23,13 +23,13 @@ fi
 echo -ne "If we need to know the codename of the system, we can use --codename param:\t$(lsb_release --codename)\n"
 
 # or lsb_release -i
-echo -ne "To know the id of the contributor, we can use the param --id\b:\t$(lsb_release --id)\n"
+echo -ne "To know the id of the contributor, we can use the param --id:\t$(lsb_release --id)\n"
 
 # or lsb_release -a
-echo -ne "To know all the info, we can use the param --all\b:\t$(lsb_release --all)\n"
+echo -ne "To know all the info, we can use the param --all:\t$(lsb_release --all)\n"
 
 # or lsb_release -s
-echo -ne "To output in a short format, we can use the param --short\b:\t$(lsb_release --short --all)\n"
+echo -ne "To output in a short format, we can use the param --short:\n$(lsb_release --short --all)\n"
 
 # or lsb_release -r
-echo -ne "To know the release, use the param --release\b:\t$(lsb_release --release)"
+echo -ne "To know the release, use the param --release:\t$(lsb_release --release)\n"
