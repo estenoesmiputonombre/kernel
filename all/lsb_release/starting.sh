@@ -33,3 +33,6 @@ echo -ne "To output in a short format, we can use the param --short:\n$(lsb_rele
 
 # or lsb_release -r
 echo -ne "To know the release, use the param --release:\t$(lsb_release --release)\n"
+
+# or lsb_release -d
+echo -ne "To know the description, use the param --description:\t$(lsb_release --description)"
