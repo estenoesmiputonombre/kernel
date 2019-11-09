@@ -28,3 +28,6 @@ awk 'BEGIN {for(i=0;i<10;i++) print int(101*rand())}'
 
 # Print the sum of the bytes in a directory
 ls -l | awk 'BEGIN {print "Starting the sum"} {x+=$5} END {print "Sum of bytes: " x}'
+
+# Print only the odd lines and the sum of the number of the odd lines
+cat -n /etc/passwd| awk '{if(NR % 2 == 0) print $0; x+=$1} END {print "Sum of the odd numbers: " x}'
