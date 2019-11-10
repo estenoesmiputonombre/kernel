@@ -46,3 +46,6 @@ iptables -L INPUT -V
 
 # or iptables --zero INPUT [number]
 iptables -Z INPUT 1
+
+# To save we will have to use: iptables-save and iptables-restore to restore the defaults
+

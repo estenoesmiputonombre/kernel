@@ -13,11 +13,15 @@ echo "If we want to display all the rules that we have, we can use 'sudo iptable
 
 # Defining a rule means appending it to the list(chain).
 # --append/-A to append to the INPUT chain:
+# --insertion/-I to insert to a chain
 # --in-interface/-i <interface> is where we want to filter the traffic
 # --protocol/-p <protocol(tcp/udp)> refers to the nerworking protocol of packets you want to filter.
 # --source/-s [!] address[/mask](You can use DNS)
 # --destination-port/--dport <port> the port on which I want to filter the traffic
 # --jump/-j <tarjet> EXTENSIONS
+# --goto/-g chain, specifies that the processing will continue in a user-specified chain.
+# --fragment/-f the rule will only be appliedto the second and subsequent fragments of fragmented packets.
+# --set-counters/-c Enables the admin to initialize the packet and byte counters of a rule.
 
 # sudo iptables --append --in-interface <interface> --protocol [tcp|udp] --source address --destination-port <port> --jump <source>
 
