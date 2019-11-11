@@ -1,5 +1,7 @@
 # INFO
 
+The iptables command manages the tecnology netfilter
+
 ## Tables
 
 The purpose of a table is to contains chains
