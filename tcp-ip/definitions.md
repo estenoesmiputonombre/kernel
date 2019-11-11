@@ -22,6 +22,7 @@ This was accomplished using a set of **gateways** (later called routers) that pr
 
 The resulting "concatenated" network or **catenet**(later called internetwork) would be much more useful, as many more nodes offering a wide variety of services cloud comunicate.
    
+```
             Catenet or internetwork
  -------------------------------------------- 
 |                                            |
@@ -34,3 +35,13 @@ The resulting "concatenated" network or **catenet**(later called internetwork) w
 |  ---------                      ---------  |
 |                                            |
  --------------------------------------------
+```
+
+## Packet Switching
+
+**chunks**(packets) of digital information comprising some number of bytes are carried through the network somewhat independently.
+
+## Multiplexing
+
+Chunks comming from differents sources or senders can be mixed together and pulled apart later.
+
