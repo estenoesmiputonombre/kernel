@@ -10,6 +10,10 @@ The purpose of a table is to contains chains
 
 * mangle
 
+* raw
+
+* security
+
 ### Filter
 
 Inside the filter table, we have:
@@ -67,7 +71,7 @@ type: *outgoing*:
 
 If we want to add a rule to a chain, we can use:
 
-`sudo iptables --table [nat|filter|mangle] --append chain others --jump target`
+`sudo iptables --table [nat|filter|mangle|raw|security] --append chain others --jump target`
 
 ### Specifiers
 
