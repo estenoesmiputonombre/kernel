@@ -76,6 +76,38 @@ Versions:
  ---------------     --------------     ---------------------        ---------------
 ```
 
+## Frame format
+
+### Characteristics
+
+Main fields are:
+
+* Preamble: It is 8 bytes starting field that provides __alert__ and __timing pulse__ for transmission.
+
+* Destination Address: It is a 6 byte field containing __physical address__(MAC) of destination address.
+
+* Source Address: It is a 6 byte field containing the __physical address__(MAC) of the sending station.
+
+* Length: It is a 7 byte field that stores the number of bytes in the data field.
+
+* Data: This is a variable sized field carries the data from the upper layers. The maximum size of data field is 1500 bytes.
+
+* Padding: This is added to the data to bring its length to the minimum requirement of 46 bytes.
+
+* CRC(Cyclic Redundancy Check): It contains the error detection information.
+
+### Schema
+
+```
+      Preamble      Destination    Source
+                     Address       Address      Data+padding        CRC
+     ---------------------------------------------------------------------
+    |            |              |           |                   |         |
+    |  8 bytes   |    6 bytes   |  6 bytes  |  MIN: 46 bytes    | 4 bytes |
+    |            |              |           |  MAX: 1500 bytes  |         |
+     ---------------------------------------------------------------------
+```
+
 ## Remainders
 
 * Bus structure:
@@ -145,3 +177,5 @@ Versions:
 ### Resources
 
 * [chapter 2 Ethernet](http://intronetworks.cs.luc.edu/1/html/ethernet.html)
+
+* [tutorialpoint](https://www.tutorialspoint.com/classic-ethernet)
