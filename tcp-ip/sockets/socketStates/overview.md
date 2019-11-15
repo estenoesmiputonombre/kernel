@@ -27,6 +27,7 @@
 The following diagram represents all states that can be detect programmatically for a datagram (UDP) socket.
 
 ```
+(It dont visuallice good in markdown un github)
   Mutually Exclusive
   
   								sento(),
