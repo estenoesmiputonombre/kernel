@@ -161,6 +161,26 @@ Slash-separated pair of the process id (PID) and process name of the process tha
 
 xxxx
 
+### Active UNIX domain Sockets
+
+#### Proto
+        
+The protocol family (usually unix) used by the socket.
+
+#### RefCnt
+
+The reference count (i.e. attached processes via this socket)
+
+#### Flags
+
+The flags displayed in 
+
+* `SO_ACCEPTON` (Displayed as ACC) -> used on unconnected sockets if their correponding processes are waiting got a connect request.
+
+* `SO_WAITDATA` (W)
+
+* `SO_NOSPACE` (N)
+
 ## Families
 
 * __inet__ same as --inet|-4
