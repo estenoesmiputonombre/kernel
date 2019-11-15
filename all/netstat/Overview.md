@@ -77,6 +77,90 @@ Netstat prints info about the __Linux Networking Subsystem__.
 
 * -C -> Print routing information from the route cache.
 
+## Output
+
+Active Internet Connections (TCP, UDP, UDPLite, raw)
+
+### Protocol
+
+The protocol used by the socket:
+
+* tcp
+
+* udp
+
+* udpl
+
+* raw
+
+### Recv-Q
+
+* Established: The count of bytes not copied by the user program connected to this socket.
+
+* Listening: Since Kernel 2.6.18 this column contains the current __syn backlog__.
+
+### Send-Q
+
+* Established: The count of bytes not acknowledged by the remote host.
+
+* Listening: SInce Kernel 2.6.18 this column contains the maximum size of the __syn backlog__.
+
+### Local Address
+
+* Address and port nunmber of the local end of the socket.
+
+* Unless the --numeric(-n) options is specified, the socket address is resolved to its Canonical host name(FQDN), and the port number is translated into the corresponding service name.
+
+### Foreign Address
+
+* Address and port number of the remote end of the socket. 
+
+* Analogous to "Local Address".
+
+### State
+
+* The state of the socket.
+
+* Since there are no states in __raw mode__ and usually used in __UDP__ and __UPDLite__, this column may be left blank.
+
+* Values:
+
+    + `ESTABLISHED` -> The socket has an established connection.
+
+    + `SYN_SENT` -> The socket is actively attempting to establish a connection. 
+
+    + `SYN_RECV` -> A connection request has been received from the network.
+
+    + `FIN_WAIT1` -> The socket is closed, and the connection is shutting down.
+
+    + `FIN_WAIT2` -> Connection is closed, and the socket is waiting for a shutdown from the remote end.
+
+    + `TIME_WAIT` -> The socket is waiting after close to handle packets still in the network.
+
+    + `CLOSE` -> The socket is not being used.
+
+    + `CLOSE_WAIT` -> The remote end has shut down, waiting for the socket to close.  
+
+    + `LAST_ACK` -> The remote end has shut down, and the socket is closed. Waiting for acknowledgement. 
+
+    + `LISTEN` -> The socket is listening for incoming connections. Such sockets are not included in the output unless you specify the --listening (-l) or --all(-a) option.
+
+    + `CLOSING` -> Both sockets are shut down but we still dont have all our data sent.
+
+    + `UNKNOWN` -> The state of the socket is unknown. 
+
+### User
+
+The username or the user id (UID) of the owner of the socket.
+
+### PID/Program name
+
+Slash-separated pair of the process id (PID) and process name of the process that owns the socket. --program causes this column to be included. You will also need superuser privileges to see this information on sockets you dont own. This identification information is not yet available for IPX sockets.
+
+### Timer
+
+xxxx
+
 ## Families
 
 * __inet__ same as --inet|-4
