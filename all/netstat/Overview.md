@@ -81,13 +81,13 @@ Netstat prints info about the __Linux Networking Subsystem__.
 
 * __inet__ same as --inet|-4
 
-        + Includes __raw__
+    + Includes __raw__
 
-        + __udp__
+    + __udp__
 
-        + __udplite__
+    + __udplite__
 
-        + __tcp__ protocol sockets.
+    + __tcp__ protocol sockets.
 
 * __inet6__ same as --inet6|-6
 
@@ -103,6 +103,6 @@ Netstat prints info about the __Linux Networking Subsystem__.
 
 * __bluetooth same as --bluetooth
 
-        + Includes l2cap
+    + Includes l2cap
 
-        + rfcomm protocol sockets
+    + rfcomm protocol sockets
