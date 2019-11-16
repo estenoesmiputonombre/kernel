@@ -1,8 +1,12 @@
-from urllib import request
+from urllib import request, error
+from http import client
 
+try:
 # The HTTPResponse implements the interface io.BufferedIOBase
 # We can make a request to a endpoint, and play with it 
-response = request.urlopen('http://www.debian.org')
+	response = request.urlopen('http://www.debian.org')
+except error.HTTPError as e:
+	print('status', e.code)
 
 # we can read an amount of bytes of the body or 
 # read all the response body, using the method HTTPResponse.read([amt])
@@ -53,3 +57,7 @@ print("HTTPResponse.debuglevel: {}".format(response.debuglevel))
 # Is the stream closed?
 # Using HTTPResponse.closed it returns a boolean
 print("HTTPResponse.closed: {}".format(response.closed))
+
+print("Dictionary maps the HTTP 1.1 status coeds to W3C names:")
+for key in client.responses:
+	print("{}: {}".format(key, client.responses[key]))
