@@ -57,3 +57,5 @@ The following diagram represents all states that can be detect programmatically 
 * not Writable -> The network system does not have enough buffers to accommodate outgoing data.
 
 * closed -> The socket handle is invalid.
+
+
