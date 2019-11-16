@@ -4,7 +4,7 @@ import sys
 if len(sys.argv) != 2:
 	raise ValueError("You must enter a command line argument")
 try:
-	response = request.urlopen(sys.argv[1])
+	response = request.urlopen(sys.argv[1]) # It returns a http.client.HTTPResponse
 	for line in response:
 		print(str(line))
 except (request.URLError):
