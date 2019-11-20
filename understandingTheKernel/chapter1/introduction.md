@@ -2,6 +2,10 @@
 
 Linux is a member of the large family of Unix-like operating systems.
 
+The kernel is loaded into RAM when the system boots and contains many critical procedures that are needed for the system operate.
+
+We often use the term "operating system" as a synonym of the kernel
+
 Unix-like kernels that already exists:
 
 + FreBSD
